@@ -27,22 +27,36 @@ body::after {
 	width: 1px;
 	height: 1px;
 	background-color: #fff;
-	z-index: 2;
+	z-index: 2; 
 }
 
+/**/
+
 .intro {
-	position: absolute;
+	position: absolute; 
+	width:100%;
 	top: 50%;
-	left: 50%;
+	left:50%;
 	transform: translate(-50%, -50%);
 	z-index: 2;
 	color: rgb(75, 213, 238);
 	font-family: "Open Sans", sans-serif;
 	font-weight: 500;
 	font-size: 3.25rem;
-	width: 80%;
 	opacity: 0;
 	animation: intro 4s ease-out 0.5s;
+}
+.intro2 {
+	position: absolute; 
+	width:100%;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	color: rgb(75, 213, 238);
+	font-family: "Open Sans", sans-serif;
+	font-weight: 500;
+	font-size: 3.25rem;
 }
 
 @keyframes intro {
@@ -60,15 +74,20 @@ body::after {
 	}
 }
 
-.logo {
+.logo { 
 	position: absolute;
 	top: 50%;
-	left: 50%;
+	left:50%;
 	transform: translate(-50%, -50%);
 	z-index: 2;
-	width: 100%;
 	opacity: 0;
 	animation: logo 5s ease-out 5s;
+}
+.logo2 {
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
 }
 
 .logo img {
@@ -100,14 +119,26 @@ p {
 	text-align: justify;
 	overflow: hidden;
 	height: 50em;
-	width: 20em;
+	width: 100%;
 	position: absolute;
 	bottom: 0;
-	left: 50%;
-	margin-left: -10em;
 	z-index: 0;
 	transform: perspective(350px) rotateX(25deg);
 	transform-origin: 50% 100%;
+
+}
+
+.kanoni{
+	top: 50%;
+    color: #ffd800;
+    font-size: large;
+    position: absolute;
+    margin-left: auto;
+    margin-right: 0;
+    left: 700px;
+    background: black;
+    top: 800px;
+
 }
 
 #scroller::after {
@@ -122,7 +153,7 @@ p {
 #content {
 	position: absolute;
 	top: 100%;
-	animation: scoller 69s linear 9s;
+	animation: scoller 120s linear 9s;
 }
 
 @keyframes scoller {
@@ -132,6 +163,15 @@ p {
 	100% {
 		top: -200%;
 	}
+}
+
+#checkbutton {
+	position: absolute; 
+	width:100%;
+	top: 50%;
+	height: 20%;
+	background-color: #ffd800;
+	z-index: 10;
 }
 
 #title,
