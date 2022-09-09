@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ciampore</title>
+        <link href="style.css" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="favicon_ciampore.png">
+
+        <script
+        src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+        crossorigin="anonymous"></script>
+    </head>
+<body>
+
+    <style>
+        p{
+            margin: 0px;
+        }
+    </style>
+
+    <p>
+        ciao, sei invitato?
+    </p>
+    <p style="color: white; ">
+        (tutto in minuscolo)
+    </p>
+
+    <form action="/action_page.php">
+
+        <div style="display: flex;">
+            <div style="float: left;">
+                <label for="fname">Nome</label><br>
+                <input type="text" id="fname" name="fname" placeholder="nome"><br>
+            </div>
+
+            <div style="float: right;">
+                <label for="lname">Cognome</label><br>
+                <input type="text" id="lname" name="lname" placeholder="cognome"><br><br>
+            </div>
+        </div>
+
+        <p style="color: white; ">Oppure</p>
+
+        <label for="sname">Soprannome</label><br>
+        <input type="text" id="sname" name="sname" placeholder="soprannome"><br>
+
+        <br><br>
+
+        <button type="button" onclick="checkmulo()">invia</button>
+    </form> 
+      
+    <script>
+
+        function checkmulo(){
+            var nome = document.getElementById('fname').value;
+            var cognome = document.getElementById('lname').value;
+            var soprannome = document.getElementById('sname').value;
+
+
+            var mulo = nome+cognome+soprannome;
+
+            $.ajax({
+                url:'muli.txt',
+                success: function (data){
+                //parse your data here
+                //you can split into lines using data.split('\n') 
+                //an use regex functions to effectively parse it
+                let muli = data.split('\r\n');
+                
+                console.log(muli);
+                
+                if(muli.includes(mulo)){
+                    window.location.href = "XXX_cico_danger7---XXXredirect456_to_22antivirus_456check-NO-opengate432_gft&&scugnizz-coinsha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=.html";
+                } else {
+                    window.location.href = "mi_dispiace_ma_no.html";
+                }
+
+                }
+            });
+
+        }
+    </script>
+    <script src="init.js"></script>
+
+
+</body>
+</html>
