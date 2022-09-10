@@ -62,6 +62,8 @@
 
             var mulo = nome+cognome+soprannome;
 
+            localStorage.setItem("mulon",mulo);
+
             $.ajax({
                 url:'muli.txt',
                 success: function (data){
