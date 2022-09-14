@@ -62,6 +62,7 @@
 
             var mulo = nome+cognome+soprannome;
             mulo = mulo.toLowerCase();
+            mulo = mulo.split(' ').join('');
 
             localStorage.setItem("mulon",mulo);
 
