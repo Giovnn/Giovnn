@@ -10,14 +10,14 @@
 <div id="slide1" class="slide">
   <div class="title">
     <h1>Slide 1</h1>
-    <p>Lorem ipsum dolor sit amet, in velit iudico mandamus sit, persius dolorum in per, postulant mnesarchum cu nam. Malis movet ornatus id vim, feugait detracto est ea, eam eruditi conceptam in. Ne sit explicari interesset. Labores perpetua cum at. Id viris docendi denique vim.</p>
+    <p>Ciao, sai che non sono bravo con le parole anche se avrei tanto da dire. Spesso sono silenzioso mentre ti guardo e penso a niente perchè mi basta davvero poco per sorridere e mi perdo nel profondo dei tuoi occhi</p>
   </div>
 </div>
 
 <div id="slide2" class="slide">
   <div class="title">
     <h1>Slide 2</h1>
-    <p>Lorem ipsum dolor sit amet, in velit iudico mandamus sit, persius dolorum in per, postulant mnesarchum cu nam. Malis movet ornatus id vim, feugait detracto est ea, eam eruditi conceptam in. Ne sit explicari interesset. Labores perpetua cum at. Id viris docendi denique vim.</p>
+    <p>Non ci conosciamo da molto però ho imparato a conoscerti e tu hai fatto lo stesso con me. Sei dolce, semplice e delicata, come un fiore ti sei aperta mostrando veramente chi sei. Mi piaci da impazzire e non potrei essere più felice di averti accanto</p>
   </div>
   <img src="https://picsum.photos/980/600">
   <img src="https://picsum.photos/960/600"> 
@@ -26,12 +26,12 @@
 <div id="slide3" class="slide">
   <div class="title">
     <h1>Slide 3</h1>
-    <p>Lorem ipsum dolor sit amet, in velit iudico mandamus sit, persius dolorum in per, postulant mnesarchum cu nam. Malis movet ornatus id vim, feugait detracto est ea, eam eruditi conceptam in. Ne sit explicari interesset. Labores perpetua cum at. Id viris docendi denique vim.</p>
+    <p>Non mi perderò a scrivere su un sito quello che potrei dirti guardandoti, però sai come sono fatto e le cose tradizionali non mi piacciono (in tutti i sensi ;) ). Non sono bravo con i regali e non mi piacciono gli oggetti ma spero tu mi capisca</p>
   </div>
 </div>
 
-<div id="slide4" class="slide header">
-    <h1>The End</h1>
+<div id="slide4" class="slide header tiamo" onclick="displayPhrase()">
+    <h1>Ti voglio bene</h1>
 </div>
 
 <!-- Display the countdown timer in an element -->
@@ -39,6 +39,13 @@
 </div>
 
 <script>
+
+function displayPhrase()
+{
+    document.getElementById("slide4").innerHTML = 'Ti amo';
+}
+
+  
 // Set the date we're counting down to
 var countDownDate = new Date("Dec 25, 2023 00:00:00").getTime();
 
