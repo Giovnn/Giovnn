@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 
 html {
   height: 100%;
@@ -87,8 +87,8 @@ img:last-of-type {
 
 .header {
   text-align: center;
-  font-size: 175%;
-  color: #fff;
+  font-size: 400%;
+  color: #000;
   text-shadow: 0 2px 2px #000;
 }
 
