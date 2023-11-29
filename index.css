@@ -123,26 +123,9 @@ img:last-of-type {
   margin-right: 0;
 }
 
-.slide, .slide:before {
-  background: 50% 50% / cover;  
-}
-
-.header {
-  text-align: center;
-  font-size: 175%;
-  color: #fff;
-  text-shadow: 0 2px 2px #000;
-}
-
-#title2 {
-  background-image: url("https://picsum.photos/640/480");
-  z-index:2;
-}
-
 #title2 h1 {
  transform: translateZ(.25px) scale(.75);
  transform-origin: 50% 100%;
-
 }
 
 
