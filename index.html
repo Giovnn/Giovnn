@@ -35,6 +35,8 @@
 <div id="title2" class="slide header">
 </div>
 
+<div id="title3" class="slide header" style="visibility:hidden">
+</div>
 
 <style>
   .tiamo {
@@ -76,6 +78,8 @@ var x = setInterval(function() {
   if (true) {
     clearInterval(x);
     document.getElementById("title2").innerHTML = "Buon Natale!!!";
+    document.getElementById("title3").style.visibility = "visible";
+
   }
 }, 1000);
 </script>
