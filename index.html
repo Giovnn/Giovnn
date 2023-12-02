@@ -29,7 +29,7 @@
 
 <div id="slide4" class="slide header" onclick="displayPhrase()">
     <p id="tiamo">Ti voglio bene</p>
-    <div style="font-size:60px; color:#5e1322">Cliccami</div>
+    <div id="tiamo1" style="font-size:60px; color:#5e1322">Cliccami</div>
 </div>
 
 <!-- Display the countdown timer in an element -->
@@ -55,6 +55,8 @@ i=1000;
 
 function displayPhrase()
 {
+  
+document.getElementById("tiamo1").style.display = "none";
 
 do {
 
