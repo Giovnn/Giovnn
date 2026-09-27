@@ -241,12 +241,24 @@ function etichettaNodo(id) {
 
 // ---------- mappa ----------
 const mappa = L.map("mappa", { zoomSnap: 0.5 });
-const attribuzione = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>';
-const stradale = L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
-  { subdomains: "abcd", maxZoom: 20, attribution: attribuzione }).addTo(mappa);
-const chiara = L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
-  { subdomains: "abcd", maxZoom: 20, attribution: attribuzione });
-L.control.layers({ "Mappa stradale": stradale, "Mappa chiara": chiara }, null, { position: "topright" }).addTo(mappa);
+// Da settembre 2026 le tile raster di CARTO senza chiave arrivano coperte dalla
+// filigrana "API key required". Con una chiave (gratuita per uso non commerciale:
+// https://carto.com/basemaps/apikey) si usano le due basi CARTO; senza chiave si
+// ripiega sulle tile standard di OpenStreetMap.
+const CARTO_KEY = "";   // <-- incolla qui la tua chiave CARTO
+const attribuzioneOSM = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
+const attribuzione = attribuzioneOSM + ' &copy; <a href="https://carto.com/attributions">CARTO</a>';
+if (CARTO_KEY) {
+  const carto = stile => L.tileLayer(
+    `https://{s}.basemaps.cartocdn.com/${stile}/{z}/{x}/{y}{r}.png?key=${encodeURIComponent(CARTO_KEY)}`,
+    { subdomains: "abcd", maxZoom: 20, attribution: attribuzione });
+  const stradale = carto("rastertiles/voyager").addTo(mappa);
+  const chiara = carto("light_all");
+  L.control.layers({ "Mappa stradale": stradale, "Mappa chiara": chiara }, null, { position: "topright" }).addTo(mappa);
+} else {
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+    { maxZoom: 19, attribution: attribuzioneOSM }).addTo(mappa);
+}
 L.control.scale({ imperial: false }).addTo(mappa);
 const strato = L.layerGroup().addTo(mappa);      // rotte, marker, percorsi delle rifiutate
 const stratoDiretti = L.layerGroup();             // percorsi diretti: acceso dall'interruttore
